@@ -4,7 +4,23 @@ index:
     summary: INDEX
     parent: index
     url: /wiki/index
-    updated: '2020-01-15 19:52:14 +0900'
+    updated: '2020-01-15 23:58:42 +0900'
+    children: []
+Script:
+    type: wiki
+    title: Script
+    summary: 'Script 언어'
+    parent: index
+    url: /wiki/Script
+    updated: '2020-01-15 23:59:19 +0900'
+    children: [ShellScript]
+ShellScript:
+    type: wiki
+    title: ShellScript
+    summary: 'ShellScript 배우기'
+    parent: Script
+    url: /wiki/ShellScript
+    updated: '2020-01-16 00:03:46 +0900'
     children: []
 vim:
     type: wiki
@@ -20,5 +36,5 @@ vimwiki:
     summary: 'vimwiki에 대한 내용'
     parent: vim
     url: /wiki/vimwiki
-    updated: '2020-01-15 22:54:59 +0900'
+    updated: '2020-01-15 23:20:42 +0900'
     children: []
