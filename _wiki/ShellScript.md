@@ -3,7 +3,7 @@ layout  : wiki
 title   : ShellScript
 summary : ShellScript 배우기
 date    : 2020-01-15 23:59:22 +0900
-updated : 2020-01-16 01:07:49 +0900
+updated : 2020-01-16 01:36:02 +0900
 tag     : shell shellscript 쉘스크립트 
 toc     : true
 public  : true
@@ -23,7 +23,8 @@ fi
 ```
 * 주의할 점 : [, ], 조건 모두  양 옆 한 칸 꼭 띄어쓰기,
 * 조건문 종류
-```
+
+```sh
 [ -z ] : 문자열의 길이가 0이면 참
 [ -n ] : 문자열의 길이가 0이 아니면 참
 [ -eq ] : 값이 같으면 참
