@@ -3,7 +3,7 @@ layout  : wiki
 title   : ShellScript
 summary : ShellScript 배우기
 date    : 2020-01-15 23:59:22 +0900
-updated : 2020-01-16 01:36:02 +0900
+updated : 2020-01-16 01:48:06 +0900
 tag     : shell shellscript 쉘스크립트 
 toc     : true
 public  : true
@@ -84,22 +84,18 @@ echo hi > /dev/null
 ech hi 2> /dev/null
 
 표준 출력 표준 오류 출력 둘 다 무시.
-echo hi > /dev/null 2>&1
-```
+`echo hi > /dev/null 2>&1`
 
 1> 은 표준 출력의 방향이며 1> /dev/null은 표준 출력을 먹개비한테 돌린다는 의미,
 
 2> 역시 마찬가지며 1>에서 1은 보통 생략(기본값)
 
 출력 오류가 있을 때 로그파일에 입력하는 예제 
-```
-ech hi 1> /dev/null 2> log.file
-```
+`ech hi 1> /dev/null 2> log.file`
 
 ## `명령` 역따옴표 
 * 리눅스 명령을 넣으면 결과 반환
 * 예제
-```
-echo `expr 1 = 3`
-```
+ 
+``echo ``expr 1 = 3`` ``
 
