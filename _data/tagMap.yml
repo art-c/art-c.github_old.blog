@@ -1,0 +1,5 @@
+vim:
+    - {fileName: index}
+    - {fileName: vim}
+vimwiki:
+    - {fileName: vimwiki}
