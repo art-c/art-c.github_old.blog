@@ -20,7 +20,7 @@ ShellScript:
     summary: 'ShellScript 배우기'
     parent: Script
     url: /wiki/ShellScript
-    updated: '2020-01-16 01:04:50 +0900'
+    updated: '2020-01-16 01:07:49 +0900'
     children: []
 vim:
     type: wiki

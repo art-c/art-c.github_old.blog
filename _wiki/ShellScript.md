@@ -3,8 +3,8 @@ layout  : wiki
 title   : ShellScript
 summary : ShellScript 배우기
 date    : 2020-01-15 23:59:22 +0900
-updated : 2020-01-16 01:04:50 +0900
-tag     : 
+updated : 2020-01-16 01:07:49 +0900
+tag     : shell shellscript 쉘스크립트 
 toc     : true
 public  : true
 parent  : Script

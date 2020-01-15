@@ -1,5 +1,11 @@
 vim:
     - {fileName: index}
     - {fileName: vim}
+shell:
+    - {fileName: ShellScript}
+shellscript:
+    - {fileName: ShellScript}
+쉘스크립트:
+    - {fileName: ShellScript}
 vimwiki:
     - {fileName: vimwiki}
