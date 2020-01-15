@@ -1,0 +1,59 @@
+# Site settings
+title: art-c
+url: "https://art-c.github.io"
+baseurl: ""
+description: >
+    C언어 예술가 서재
+
+# My information
+email: hello.korea.6174@gmail.com
+author: art-c
+profile: C언어 예술가
+github_username: 
+comment-support: utterances
+
+# Build settings
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+paginate: 10
+paginator_path: "/blog"
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+    wiki:
+        output: true
+        permalink: /:collection/:path/
+
+# Comment Service
+utterances:
+  repo: art-c/art-c.github.io
+  issue-term: pathname
+  label: Comment
+  branch: master
+
+google_analytics:
+  ua: 
+
+google_adsense:
+  client: 
+
+blame: "https://github.com/art-c/art-c.github.io/blame/master/_wiki"
+edit: "https://github.com/art-c/art-c.github.io/edit/master/_wiki"
+issue: "https://github.com/art-c/art-c.github.io/issues/new"
+
+timezone: "Asia/Seoul"
+
+# https://kramdown.gettalong.org/rdoc/Kramdown/Options.html - smart_quotes
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
