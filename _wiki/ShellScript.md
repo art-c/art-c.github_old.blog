@@ -3,7 +3,7 @@ layout  : wiki
 title   : ShellScript
 summary : ShellScript 배우기
 date    : 2020-01-15 23:59:22 +0900
-updated : 2020-01-16 01:50:18 +0900
+updated : 2020-01-16 01:54:32 +0900
 tag     : shell shellscript 쉘스크립트 
 toc     : true
 public  : true
@@ -93,9 +93,9 @@ ech hi 2> /dev/null
 출력 오류가 있을 때 로그파일에 입력하는 예제 
 `ech hi 1> /dev/null 2> log.file`
 
-## `명령` 역따옴표 
+## 명령 역따옴표 
 * 리눅스 명령을 넣으면 결과 반환
 * 예제
  
-`echo \`expr 1 = 3\``
+` \`echo expr 1 = 3\` `
 
