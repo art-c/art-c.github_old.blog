@@ -1,6 +1,8 @@
 vim:
     - {fileName: index}
     - {fileName: vim}
+neovim:
+    - {fileName: neovim}
 shell:
     - {fileName: ShellScript}
 shellscript:

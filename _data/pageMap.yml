@@ -4,7 +4,15 @@ index:
     summary: INDEX
     parent: index
     url: /wiki/index
-    updated: '2020-01-15 23:58:42 +0900'
+    updated: '2020-01-16 03:35:39 +0900'
+    children: []
+neovim:
+    type: wiki
+    title: 'NeoVim 설치'
+    summary: 'NeoVim 설치'
+    parent: vim
+    url: /wiki/neovim
+    updated: '2020-01-16 18:22:46 +0900'
     children: []
 Script:
     type: wiki
@@ -29,7 +37,7 @@ vim:
     parent: index
     url: /wiki/vim
     updated: '2020-01-15 17:42:43 +0900'
-    children: [vimwiki]
+    children: [neovim, vimwiki]
 vimwiki:
     type: wiki
     title: 'vimwiki 설명'
