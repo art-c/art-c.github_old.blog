@@ -3,6 +3,8 @@ vim:
     - {fileName: vim}
 neovim:
     - {fileName: neovim}
+podman:
+    - {fileName: podman}
 shell:
     - {fileName: ShellScript}
 shellscript:

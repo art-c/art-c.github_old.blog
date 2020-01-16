@@ -3,7 +3,7 @@ layout  : wiki
 title   : Index 페이지
 summary : INDEX
 date    : 2020-01-15 17:40:46 +0900
-updated : 2020-01-16 03:35:39 +0900
+updated : 2020-01-16 19:22:19 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -19,4 +19,5 @@ latex   : false
 * [[Script]]
     * [[ShellScript]]
     
-
+* [[container]]
+    * [[podman]]

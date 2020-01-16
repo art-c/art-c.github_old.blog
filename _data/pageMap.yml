@@ -4,7 +4,7 @@ index:
     summary: INDEX
     parent: index
     url: /wiki/index
-    updated: '2020-01-16 03:35:39 +0900'
+    updated: '2020-01-16 19:22:19 +0900'
     children: []
 neovim:
     type: wiki
@@ -13,6 +13,14 @@ neovim:
     parent: vim
     url: /wiki/neovim
     updated: '2020-01-16 18:22:46 +0900'
+    children: []
+podman:
+    type: wiki
+    title: podman
+    summary: podman
+    parent: container
+    url: /wiki/podman
+    updated: '2020-01-16 19:22:19 +0900'
     children: []
 Script:
     type: wiki
