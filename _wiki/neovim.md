@@ -1,14 +1,14 @@
 ---
-layout: wiki
-title: NeoVim 설치
-summary: NeoVim 설치
-date: 2020-01-16 03:32:51 +0900
-updated: 2020-01-19 21:10:38 +0900
-tag: neovim
-toc: true
-public: true
-parent: vim
-latex: false
+layout  : wiki
+title   : NeoVim 설치
+summary : NeoVim 설치
+date    : 2020-01-16 03:32:51 +0900
+updated : 2020-01-19 21:13:57 +0900
+tag     : neovim
+toc     : true
+public  : true
+parent  : vim
+latex   : false
 ---
 * TOC
 {:toc}
