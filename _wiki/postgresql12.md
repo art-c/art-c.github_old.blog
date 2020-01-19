@@ -3,11 +3,11 @@ layout  : wiki
 title   : postgresql12
 summary : postgresql12
 date    : 2020-01-19 20:41:57 +0900
-updated : 2020-01-19 20:47:30 +0900
+updated : 2020-01-19 21:19:07 +0900
 tag     : db, databse
 toc     : true
 public  : true
-parent  : databse
+parent  : database
 latex   : false
 ---
 * TOC
