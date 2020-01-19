@@ -1,3 +1,8 @@
+container:
+    - {fileName: container}
+database:
+    - {fileName: database}
+    - {fileName: postgresql12}
 vim:
     - {fileName: index}
     - {fileName: vim}
@@ -5,6 +10,8 @@ neovim:
     - {fileName: neovim}
 podman:
     - {fileName: podman}
+'db,':
+    - {fileName: postgresql12}
 shell:
     - {fileName: ShellScript}
 shellscript:

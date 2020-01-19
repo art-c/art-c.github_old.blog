@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./generateDATA.js
+
+git add ./_data
+
