@@ -3,7 +3,7 @@ layout  : wiki
 title   : postgresql12
 summary : postgresql12
 date    : 2020-01-19 20:41:57 +0900
-updated : 2020-01-19 21:20:20 +0900
+updated : 2020-01-21 20:51:06 +0900
 tag     : db, database
 toc     : true
 public  : true
@@ -15,7 +15,43 @@ latex   : false
 
 # postgresql12
 
+* 기본설치(centos7)
+- `sudo yum  -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm`
+- `sudo yum -y  install postgresql12-server postgresql12`
+- `sudo /usr/pgsql-12/bin/postgresql-12-setup initdb`
+- `sudo nvim /var/lib/pgsql/12/data/pg_hba.conf`
+  `host    all             all             172.18.0.2/32            md5`
+- 
+
+## tip
+* backup(백업) && restore(복원)
+- [link](https://gist.github.com/juhyun210/b4a239c7399cd8f50198d227409df930)
+
+* `pg_hba.conf`
+- [설명](https://www.postgresdba.com/bbs/board.php?bo_table=B12&wr_id=36)
+ 
+```bash
+#복원:
+su postgres
+gunzip -c fileName.gz | psql dbName
+
+#주의할점:확장자가 zip등이면 gz으로 변경후 실행할 것!
+```
+
+### 명령어
+* databse 소유자 변경 : `alter databse mydb owner to myname;`
+* table 소유자 변경 : `alter table mytable tablename owner to yourname;`
+* 소유자 한번에 변경 : `reassign owned by 현재소유자 to 새로운소유자;`
+	- 모든 DB, TABLE에 적용되는 것 같음.
+* 
+
+
 ## 에러
+
+* `psql: error: could not connect to server: 치명적오류:  호스트 "[local]", 사용자 "postges", 데이터베이스 "postgres", SSL 중지 연결에 대한 설정이 pg_hba.conf 파일에 없습니다.`
+- 해결 
+`local  alll  all                 peer ` 을
+`local  all   all                 peer `로 수정후 해결
 
 ### 구문오류
 * - (dash)를 인식하지 못하는 에러
