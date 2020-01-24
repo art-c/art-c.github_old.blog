@@ -23,13 +23,14 @@ latex   : false
   `host    all             all             172.18.0.2/32            md5`
 - 
 
-## tip
-* backup(백업) && restore(복원)
+## TIP
+* **BACKUP(백업)** && restore(복원)
 - [link](https://gist.github.com/juhyun210/b4a239c7399cd8f50198d227409df930)
 
 * `pg_hba.conf`
 - [설명](https://www.postgresdba.com/bbs/board.php?bo_table=B12&wr_id=36)
- 
+
+* 복원
 ```bash
 #복원:
 su postgres
@@ -37,6 +38,10 @@ gunzip -c fileName.gz | psql dbName
 
 #주의할점:확장자가 zip등이면 gz으로 변경후 실행할 것!
 ```
+
+* 유닉스 소켓 사용법
+ - postgresql.conf에서 설정, var/run/postgresql, /tmp 디렉토리는 기본 디렉토리로 로컬에서 로그인 시 사용되는 유닉스 소켓임.그대로 둘것.
+ ```unix_socket_directories = '/var/run/postgresql, /tmp, /your/other/path' # comma-separated list of directories```
 
 ### 명령어
 * databse 소유자 변경 : `alter databse mydb owner to myname;`
