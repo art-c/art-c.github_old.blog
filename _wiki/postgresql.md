@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : postgresql12
-summary : postgresql12
+title   : postgresql
+summary : postgresql
 date    : 2020-01-19 20:41:57 +0900
-updated : 2020-01-21 20:51:06 +0900
+updated : 2020-01-28 23:48:15 +0900
 tag     : db, database
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# postgresql12
+# postgresql
 
 * 기본설치(centos7)
 - `sudo yum  -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm`
@@ -42,8 +42,11 @@ gunzip -c fileName.gz | psql dbName
 * 유닉스 소켓 사용법
  - postgresql.conf에서 설정, var/run/postgresql, /tmp 디렉토리는 기본 디렉토리로 로컬에서 로그인 시 사용되는 유닉스 소켓임.그대로 둘것.
  ```unix_socket_directories = '/var/run/postgresql, /tmp, /your/other/path' # comma-separated list of directories```
+ 
+* 서버 메모리 크기에 따른 설정값 조정
+- https://m.blog.naver.com/ssik425/220112222231
 
-### 명령어
+## 명령어
 * databse 소유자 변경 : `alter databse mydb owner to myname;`
 * table 소유자 변경 : `alter table mytable tablename owner to yourname;`
 * 소유자 한번에 변경 : `reassign owned by 현재소유자 to 새로운소유자;`
@@ -69,3 +72,19 @@ gunzip -c fileName.gz | psql dbName
 - 가능하면 - 를 사용하지 않도록 
 - 
 
+## JSONB query
+
+## 일반 쿼리
+### 쿼리 개수 제한(10개)
+``` select * from tableName limit 10```
+``` select * from tableName limit 10 offset 0``` 
+- offset을 사용하여 쿼리 결과에서 범위를 설정하여 뽑아낼 수 있음.
+
+### WHERE IN
+* WHERE 컬럼이름 IN (조건1, 조건2, 조건3,...)
+- 설명: 컬럼이름에 필드값과 IN 뒤 나열된 조건1, 조건2,... 등에 하나라도 일치하는 레코드를 가져오게 된다.
+* WHERE 컬럼이름 NOT IN (조건1, 조건2, 조건3,...)
+- 설명: 조건에 일치하지 않는 레코드를 가져온다.
+
+### 배열다루기
+- https://wwwi.tistory.com/350

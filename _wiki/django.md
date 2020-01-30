@@ -3,7 +3,7 @@ layout  : wiki
 title   : django
 summary : django
 date    : 2020-01-20 12:19:11 +0900
-updated : 2020-01-21 16:33:36 +0900
+updated : 2020-01-27 21:46:57 +0900
 tag     : django
 toc     : true
 public  : true
@@ -26,3 +26,16 @@ latex   : false
 ### settins.py
 * postgresql 유닉스 도메인 소켓(Unix domain socket) 사용시 주의사항
 - .s.PGSQL.5432는 빼고 소켓 디렉토리까지만 인자로 넘긴다. 
+
+## models.py
+
+
+### postgresql JSONB 지원 자료형
+```
+from django.contrib.postgresql.fields import JSONField
+#사용예제
+class MyModel( models.Model):
+    fieldName = JSONField(blank=True, null=True)
+```
+
+
