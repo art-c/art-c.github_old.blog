@@ -3,7 +3,7 @@ layout  : wiki
 title   : django
 summary : django
 date    : 2020-01-20 12:19:11 +0900
-updated : 2020-01-27 21:46:57 +0900
+updated : 2020-02-04 15:09:07 +0900
 tag     : django
 toc     : true
 public  : true
@@ -38,4 +38,21 @@ class MyModel( models.Model):
     fieldName = JSONField(blank=True, null=True)
 ```
 
+### Error 해결
+* ?: (translation.E004) You have provided a value for the LANGUAGE_CODE setting that is not in the LANGUAGES setting.
+- settings.py에 다음 코드 추가
+ 
+```python
+LANGUAGE_CODE = 'ko-kr'
 
+def gettext_noop(s):
+    return s
+
+LANGUAGES = [ 
+        ('ko-kr', gettext_noop('Korean')),
+ ]
+```
+
+### 참고 사이트
+- 참고 : https://github.com/django/django/blob/master/django/conf/global_settings.py
+- django DB Query 관련: https://tech.peoplefund.co.kr/2017/11/03/django-db-optimization.html 

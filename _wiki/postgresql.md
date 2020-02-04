@@ -1,9 +1,9 @@
----
+--
 layout  : wiki
 title   : postgresql
 summary : postgresql
 date    : 2020-01-19 20:41:57 +0900
-updated : 2020-01-28 23:48:15 +0900
+updated : 2020-02-01 12:34:39 +0900
 tag     : db, database
 toc     : true
 public  : true
@@ -88,3 +88,45 @@ gunzip -c fileName.gz | psql dbName
 
 ### 배열다루기
 - https://wwwi.tistory.com/350
+
+### unnest(배열을 row로 분해)  사용(psycopg2)
+```python
+#psycopg2 사용예제
+
+cur.execute("INSERT INTO mytable SELECT unnest(%s), unnest(%s::jsonb[])", (listtypeVar1, listtypeVar2 ) )
+```
+- ::type 은 타입캐스팅이다. %s::jsonb[] 은%s에 대응되는 데이터를 json를 담은 배열로 캐스팅(인식)시킨다. listtypevar2에 json타입이 들어있지만 명시적으로 캐스팅 하지 않으면 dict타입으로 인식되어 postgresql에 입력되지 않고 에러가 발생한다.
+ 
+ 
+### WHERE 정규표현식
+
+```sql
+SELECT field1, field2 FROM mytable WHERE field1 ~ '^times';
+field1      |   field2   
+------------+----------
+timestamp   |      8     
+timestamptz |      8     
+(2 rows)
+```
+
+### time관련
+
+```
+#현재 타임존
+SHOW TIMEZONE;
+
+       TimeZone
+---------------------
+America/Los_Angeles
+(1 row)
+
+#특정지역(현재시스템 타임존) 시간을 다른 지역 시간대로 맞게 보여주기(2020-01-01 00:00은 Los_Angeles 시간이다.)
+SELECT timezone('America/New_York', '2020-01-01 00:00');
+      timezone       
+---------------------
+ 2019-12-31 10:00:00
+(1 row)
+```
+
+
+
