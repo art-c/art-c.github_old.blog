@@ -3,7 +3,7 @@ layout  : wiki
 title   : django
 summary : django
 date    : 2020-01-20 12:19:11 +0900
-updated : 2020-02-04 15:09:07 +0900
+updated : 2020-02-06 00:39:31 +0900
 tag     : django
 toc     : true
 public  : true
@@ -52,6 +52,11 @@ LANGUAGES = [
         ('ko-kr', gettext_noop('Korean')),
  ]
 ```
+
+* `You cannot call this from an async context - use a thread or sync_to_async.`
+- 해결:django settings.py에 다음과 같이 추가                                                                                                            
+`os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"`
+
 
 ### 참고 사이트
 - 참고 : https://github.com/django/django/blob/master/django/conf/global_settings.py

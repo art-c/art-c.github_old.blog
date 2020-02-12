@@ -3,7 +3,7 @@ layout  : wiki
 title   : postgresql
 summary : postgresql
 date    : 2020-01-19 20:41:57 +0900
-updated : 2020-02-01 12:34:39 +0900
+updated : 2020-02-13 00:19:17 +0900
 tag     : db, database
 toc     : true
 public  : true
@@ -14,6 +14,10 @@ latex   : false
 {:toc}
 
 # postgresql
+* 참고 사이트들
+- https://m.blog.naver.com/geartec82
+- 튜닝값 생성 사이트:https://pgtune.leopard.in.ua/
+- ALTERSYSTEM : https://corekms.tistory.com/entry/94-betaALTER-SYSTEM-%EA%B5%AC%EB%AC%B8%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%8C%8C%EB%9D%BC%EB%A9%94%ED%84%B0-%EB%B3%80%EA%B2%BD
 
 * 기본설치(centos7)
 - `sudo yum  -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm`
@@ -74,6 +78,25 @@ gunzip -c fileName.gz | psql dbName
 
 ## JSONB query
 
+* ->, ->> 차이
+- -> jsonb로 반환, ->> 텍스트로 반환
+
+* 특정 key가 있는 레코드 검색 ->
+```
+select  * from mytable where field1 ? 'key1';
+select  * from mytable where field1->somthing ? 'key1';
+
+```
+* 특정 구조를 가진 레코드 검색 @>
+
+* jsonb_array_elements
+- `[ {'a':1}, {'b':2} ]` 와 같은 형태에서 배열의 요소를 펼친다.(이 경우 2개의 행으로 만듦)
+
+* jsonb_build_object, jsonb 데이터를 만든다.
+- jsonb_build_object('member', null)
+- jsonb_build_object('member', 'babo')
+- 주의 jsonb의 null과 postgesql의 null은 형식이 다르므로 주의(https://stackoverflow.com/questions/38777535/what-is-the-difference-between-and-in-postgres-sql)
+
 ## 일반 쿼리
 ### 쿼리 개수 제한(10개)
 ``` select * from tableName limit 10```
@@ -90,16 +113,17 @@ gunzip -c fileName.gz | psql dbName
 - https://wwwi.tistory.com/350
 
 ### unnest(배열을 row로 분해)  사용(psycopg2)
+
 ```python
 #psycopg2 사용예제
-
 cur.execute("INSERT INTO mytable SELECT unnest(%s), unnest(%s::jsonb[])", (listtypeVar1, listtypeVar2 ) )
 ```
 - ::type 은 타입캐스팅이다. %s::jsonb[] 은%s에 대응되는 데이터를 json를 담은 배열로 캐스팅(인식)시킨다. listtypevar2에 json타입이 들어있지만 명시적으로 캐스팅 하지 않으면 dict타입으로 인식되어 postgresql에 입력되지 않고 에러가 발생한다.
  
  
-### WHERE 정규표현식
+### WHERE 정규표현식 
 
+-  주의 field1이 숫자와 같은 타입일 경우 정규표현식이 동작안할 수 있음 그럴 땐 `field1::char`와 같이 casting을 해주면 된다.
 ```sql
 SELECT field1, field2 FROM mytable WHERE field1 ~ '^times';
 field1      |   field2   
@@ -128,5 +152,23 @@ SELECT timezone('America/New_York', '2020-01-01 00:00');
 (1 row)
 ```
 
+
+### 기타 함수들
+* 타입 알아내기 : pg_typeof(x)
+* 
+
+### 기타
+
+* 제약조건 추가
+```
+ALTER TABLE cities ADD CONSTRAINT name PRIMARY KEY(name);
+ALTER TABLE weather ADD CONSTRAINT city FOREIGN KEY(city) REFERENCES cities(name);
+```
+
+* 제약조건 삭제
+```
+ALTER TABLE weather DROP CONSTRAINT city;
+ALTER TABLE cities DROP CONSTRAINT name;
+```
 
 

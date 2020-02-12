@@ -3,7 +3,7 @@ layout  : wiki
 title   : Index 페이지
 summary : INDEX
 date    : 2020-01-15 17:40:46 +0900
-updated : 2020-02-04 22:26:29 +0900
+updated : 2020-02-12 01:42:08 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -26,7 +26,12 @@ latex   : false
 	* [[postgresql]]
 * [[django]]
 * [[git]]
+* [[javascript]]
+* [[python]]
+	* [[coroutine]] 
+	* [[datetime]]
 * [[rabbitmq]]
+* [[react]]
 * [[Script]]
     * [[ShellScript]]
 * [[uwsgi]]
