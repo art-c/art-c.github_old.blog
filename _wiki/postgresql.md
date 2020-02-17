@@ -3,7 +3,7 @@ layout  : wiki
 title   : postgresql
 summary : postgresql
 date    : 2020-01-19 20:41:57 +0900
-updated : 2020-02-13 00:19:17 +0900
+updated : 2020-02-14 04:34:51 +0900
 tag     : db, database
 toc     : true
 public  : true
@@ -15,9 +15,14 @@ latex   : false
 
 # postgresql
 * 참고 사이트들
+- 튜토리얼 : https://www.postgresqltutorial.com/
 - https://m.blog.naver.com/geartec82
 - 튜닝값 생성 사이트:https://pgtune.leopard.in.ua/
 - ALTERSYSTEM : https://corekms.tistory.com/entry/94-betaALTER-SYSTEM-%EA%B5%AC%EB%AC%B8%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%8C%8C%EB%9D%BC%EB%A9%94%ED%84%B0-%EB%B3%80%EA%B2%BD
+- 실수로 커밋:https://www.ilifo.co.kr/boards/article/59
+- 다양한 명령어 : https://semode.tistory.com/6
+- 10가지 모니터링 도구 : https://www.comparitech.com/net-admin/best-postgresql-monitoring-tools/
+- 모니터링 시스템 구축:https://miiingo.tistory.com/93
 
 * 기본설치(centos7)
 - `sudo yum  -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm`
@@ -43,9 +48,13 @@ gunzip -c fileName.gz | psql dbName
 #주의할점:확장자가 zip등이면 gz으로 변경후 실행할 것!
 ```
 
-* 유닉스 소켓 사용법
- - postgresql.conf에서 설정, var/run/postgresql, /tmp 디렉토리는 기본 디렉토리로 로컬에서 로그인 시 사용되는 유닉스 소켓임.그대로 둘것.
- ```unix_socket_directories = '/var/run/postgresql, /tmp, /your/other/path' # comma-separated list of directories```
+* 불확실:쿼리 내에서 '내용' 대신 `$$내용$$`를 사용할 수 있는 것 같음
+- `$$[1,2,3]$$`
+
+
+### 유닉스 소켓 사용법
+ * postgresql.conf에서 설정, var/run/postgresql, /tmp 디렉토리는 기본 디렉토리로 로컬에서 로그인 시 사용되는 유닉스 소켓임.그대로 둘것.
+ `unix_socket_directories = '/var/run/postgresql, /tmp, /your/other/path' # comma-separated list of directories`
  
 * 서버 메모리 크기에 따른 설정값 조정
 - https://m.blog.naver.com/ssik425/220112222231
@@ -76,20 +85,80 @@ gunzip -c fileName.gz | psql dbName
 - 가능하면 - 를 사용하지 않도록 
 - 
 
+# 부분인덱스??
+
+
 ## JSONB query
 
-* ->, ->> 차이
-- -> jsonb로 반환, ->> 텍스트로 반환
 
-* 특정 key가 있는 레코드 검색 ->
+### jsonb 함수
+- 튜토리얼:https://www.postgresql.org/docs/9.6/functions-json.html
+- jsonb_set 참고 : http://blog.naver.com/PostView.nhn?blogId=anytimedebug&logNo=221327126224&parentCategoryNo=&categoryNo=28&viewDate=&isShowPopularPosts=true&from=search
+
+### 인덱스 만들기
+- https://itholic.github.io/database-index/
+
+
+### json, jsonb 기본 연산
+
+
+* *->	int*
+ - JSON 배열에서 해당 요소를 JSON 형으로 뽑기(첫번째는 0)	
+ - '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::json->2	
+ - {"c":"baz"}
+* *->	text*
+ - 해당 key에 대한 value를 JSON 형으로 뽑기
+ - '{"a": {"b":"foo"}}'::json->'a'	
+ - {"b":"foo"}
+* *->>	int*
+ - -> 연산자와 같으나 리턴값이 text 형
+ - '[1,2,3]'::json->>2	
+ - 3
+* *->>	text*
+ - 해당 key에 대한 value를 text 형으로 뽑기
+ - '{"a":1,"b":2}'::json->>'b'	
+ - 2
+* *#>	text[]*
+ - 패스로 value를 JSON 형으로 뽑기
+ - '{"a": {"b":{"c": "foo"}}}'::json#>'{a,b}'	
+ - {"c": "foo"}
+* *#>>	text[]*
+ - 패스로 value를 text 형으로 뽑기
+ - '{"a":[1,2,3],"b":[4,5,6]}'::json#>>'{a,2}'
+ - 3
+
+### jsonb 전용 연산
+
+* *@>	jsonb*
+ - 오른쪽 jsonb 값이 있는지?
+ - '{"a":1, "b":2}'::jsonb @> '{"b":2}'::jsonb
+* *<@	jsonb*
+ - 왼쪽 jsonb 값이 있는지?
+ - '{"b":2}'::jsonb <@ '{"a":1, "b":2}'::jsonb
+* *?	text*	
+ - 오른쪽 text 값이 jsonb 가운데 key로 있는지?
+ - '{"a":1, "b":2}'::jsonb ? 'b'
+* *?|	text[]*
+ - 오른쪽 집합의 요소가운데 하나라도 jsonb의 key로 있는지?
+ - '{"a":1, "b":2, "c":3}'::jsonb ?| array['b', 'c']
+* *?&	text[]*	
+ - jsonb의 key집합이 오른쪽 집합의 부분집합인지?
+ - '["a", "b"]'::jsonb ?& array['a', 'b']
+
+
+### ->, ->> 차이
+* -> jsonb로 반환, ->> 텍스트로 반환
+
+
+### 특정 key가 있는 레코드 검색 ->
 ```
 select  * from mytable where field1 ? 'key1';
 select  * from mytable where field1->somthing ? 'key1';
 
 ```
-* 특정 구조를 가진 레코드 검색 @>
+### 특정 구조를 가진 레코드 검색 @> (있으면 true, 없으면 false)
 
-* jsonb_array_elements
+### jsonb_array_elements
 - `[ {'a':1}, {'b':2} ]` 와 같은 형태에서 배열의 요소를 펼친다.(이 경우 2개의 행으로 만듦)
 
 * jsonb_build_object, jsonb 데이터를 만든다.
@@ -97,11 +166,19 @@ select  * from mytable where field1->somthing ? 'key1';
 - jsonb_build_object('member', 'babo')
 - 주의 jsonb의 null과 postgesql의 null은 형식이 다르므로 주의(https://stackoverflow.com/questions/38777535/what-is-the-difference-between-and-in-postgres-sql)
 
-## 일반 쿼리
+* json 배열에서 특정 값의 인덱스 알아내는법
+
+
+## 일반 쿼리(query)
 ### 쿼리 개수 제한(10개)
 ``` select * from tableName limit 10```
 ``` select * from tableName limit 10 offset 0``` 
 - offset을 사용하여 쿼리 결과에서 범위를 설정하여 뽑아낼 수 있음.
+
+
+### update select
+- https://devjjo.tistory.com/44
+
 
 ### WHERE IN
 * WHERE 컬럼이름 IN (조건1, 조건2, 조건3,...)
@@ -109,8 +186,14 @@ select  * from mytable where field1->somthing ? 'key1';
 * WHERE 컬럼이름 NOT IN (조건1, 조건2, 조건3,...)
 - 설명: 조건에 일치하지 않는 레코드를 가져온다.
 
-### 배열다루기
+## 배열다루기
 - https://wwwi.tistory.com/350
+- https://stackoverflow.com/questions/46797328/how-to-get-index-of-an-array-value-in-postgresql/56775692
+- http://postgresql.kr/docs/9.6/arrays.html
+
+### array_position (postgresql >= 9.5)
+* 배열에서 특정 값의 인덱스를 알아내는 함수
+
 
 ### unnest(배열을 row로 분해)  사용(psycopg2)
 

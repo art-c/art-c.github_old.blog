@@ -3,7 +3,7 @@ layout  : wiki
 title   : git
 summary : git
 date    : 2020-01-19 21:40:24 +0900
-updated : 2020-01-21 15:21:23 +0900
+updated : 2020-02-13 10:15:18 +0900
 tag     : git
 toc     : true
 public  : true
@@ -31,3 +31,12 @@ sudo yum install git
 	- 생각할문제:새로운 branch를 push할 때 upstream 지정을 안한다면?(github상에선 branch와 detach된 상태가 되는 것 같은데...)
 * `git push origin branchName`에서 `git push`만 하면 현재 branch가 push 된다. 
 	- 생각할문제:push는 명시하는 branch에 대해서 하는 것인가?, 다른 branch를변경했더라도 push 명시한 branch만 push되는 건가?
+
+## Detatched HEAD
+* HEAD는 현재 작업중인 곳을 말한다.
+* HEAD는 기본적으로 브랜치를 가리킨다. 브랜치는 커밋을 가리킨다.
+ - commit <- Branch  <- HEAD   
+* checkout을 브랜치로 하면 문제없다. 그런데 checkout을 commit으로 직접하면 detached HEAD가 된다.
+ - commit  <- HEAD   (detatched HEAD)
+* 관련 사이트 (https://beam307.github.io/2019/01/15/git-HEAD/)
+
