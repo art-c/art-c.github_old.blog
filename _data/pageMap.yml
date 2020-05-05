@@ -1,3 +1,27 @@
+base:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/base
+    updated: '2020-02-24 22:12:29 +0900'
+    children: []
+celery:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: index
+    url: /wiki/celery
+    updated: '2020-02-04 22:21:22 +0900'
+    children: []
+centos7:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: index
+    url: /wiki/centos7
+    updated: '2020-02-09 11:07:47 +0900'
+    children: [ping막기, strace, timezone변경, 포트열기닫기]
 container:
     type: wiki
     title: container
@@ -6,6 +30,14 @@ container:
     url: /wiki/container
     updated: '2020-01-19 21:16:19 +0900'
     children: [podman]
+coroutine:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: python
+    url: /wiki/coroutine
+    updated: '2020-02-05 11:03:38 +0900'
+    children: []
 database:
     type: wiki
     title: database
@@ -13,14 +45,62 @@ database:
     parent: index
     url: /wiki/database
     updated: '2020-01-19 21:18:26 +0900'
-    children: [postgresql12]
-index:
+    children: []
+datetime:
     type: wiki
-    title: 'Index 페이지'
-    summary: INDEX
+    title: ""
+    summary: ""
+    parent: python
+    url: /wiki/datetime
+    updated: '2020-02-11 21:35:21 +0900'
+    children: []
+django:
+    type: wiki
+    title: django
+    summary: django
+    parent: ""
+    url: /wiki/django
+    updated: '2020-02-06 00:39:31 +0900'
+    children: []
+docker:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/docker
+    updated: '2020-05-05 11:24:35 +0900'
+    children: []
+docker-compose:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/docker-compose
+    updated: '2020-05-05 11:24:35 +0900'
+    children: []
+git:
+    type: wiki
+    title: git
+    summary: git
+    parent: ""
+    url: /wiki/git
+    updated: '2020-02-13 10:15:18 +0900'
+    children: []
+javascript:
+    type: wiki
+    title: ""
+    summary: ""
     parent: index
-    url: /wiki/index
-    updated: '2020-01-19 20:37:41 +0900'
+    url: /wiki/javascript
+    updated: '2020-02-14 22:43:40 +0900'
+    children: []
+material-ui:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/material-ui
+    updated: '2020-02-25 01:13:48 +0900'
     children: []
 neovim:
     type: wiki
@@ -30,6 +110,14 @@ neovim:
     url: /wiki/neovim
     updated: '2020-01-19 21:13:57 +0900'
     children: []
+ping막기:
+    type: wiki
+    title: ping막기
+    summary: ping막기
+    parent: centos7
+    url: /wiki/ping막기
+    updated: '2020-02-09 11:07:16 +0900'
+    children: []
 podman:
     type: wiki
     title: podman
@@ -38,13 +126,45 @@ podman:
     url: /wiki/podman
     updated: '2020-01-16 19:22:19 +0900'
     children: []
-postgresql12:
+postgresql:
     type: wiki
-    title: postgresql12
-    summary: postgresql12
-    parent: database
-    url: /wiki/postgresql12
-    updated: '2020-01-19 21:20:20 +0900'
+    title: null
+    summary: null
+    parent: null
+    url: /wiki/postgresql
+    updated: null
+    children: []
+python:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: index
+    url: /wiki/python
+    updated: '2020-02-05 10:52:30 +0900'
+    children: [coroutine, datetime]
+rabbitmq:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: index
+    url: /wiki/rabbitmq
+    updated: '2020-02-07 12:48:18 +0900'
+    children: []
+react:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: index
+    url: /wiki/react
+    updated: '2020-02-18 21:08:12 +0900'
+    children: []
+redis:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: index
+    url: /wiki/redis
+    updated: '2020-02-14 22:43:55 +0900'
     children: []
 Script:
     type: wiki
@@ -62,6 +182,38 @@ ShellScript:
     url: /wiki/ShellScript
     updated: '2020-01-16 01:54:32 +0900'
     children: []
+strace:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: centos7
+    url: /wiki/strace
+    updated: '2020-02-04 14:55:57 +0900'
+    children: []
+timezone변경:
+    type: wiki
+    title: timezone변경
+    summary: timezone변경
+    parent: centos7
+    url: /wiki/timezone변경
+    updated: '2020-02-03 16:46:04 +0900'
+    children: []
+uwsgi:
+    type: wiki
+    title: uwsgi
+    summary: uwsgi
+    parent: index
+    url: /wiki/uwsgi
+    updated: '2020-02-16 12:41:59 +0900'
+    children: [uwsgitop]
+uwsgitop:
+    type: wiki
+    title: uwsgitop
+    summary: 'top과 같은  uwsgi 모니터링 도구'
+    parent: uwsgi
+    url: /wiki/uwsgitop
+    updated: '2020-02-04 13:46:14 +0900'
+    children: []
 vim:
     type: wiki
     title: 'vim 상위문서'
@@ -77,4 +229,28 @@ vimwiki:
     parent: vim
     url: /wiki/vimwiki
     updated: '2020-01-19 21:08:29 +0900'
+    children: []
+vscode:
+    type: wiki
+    title: vscode
+    summary: vscode
+    parent: ""
+    url: /wiki/vscode
+    updated: '2020-01-21 15:21:36 +0900'
+    children: []
+용어:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/용어
+    updated: '2020-01-21 19:49:38 +0900'
+    children: []
+포트열기닫기:
+    type: wiki
+    title: '포트 열고 닫기'
+    summary: '포트 열고 닫기'
+    parent: centos7
+    url: /wiki/포트열기닫기
+    updated: '2020-01-21 21:18:47 +0900'
     children: []

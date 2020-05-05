@@ -1,22 +1,48 @@
 container:
     - {fileName: container}
+'coroutine,':
+    - {fileName: coroutine}
+코루틴:
+    - {fileName: coroutine}
 database:
     - {fileName: database}
-    - {fileName: postgresql12}
-vim:
-    - {fileName: index}
-    - {fileName: vim}
+django:
+    - {fileName: django}
+git:
+    - {fileName: git}
 neovim:
     - {fileName: neovim}
+ping막기:
+    - {fileName: ping막기}
 podman:
     - {fileName: podman}
-'db,':
-    - {fileName: postgresql12}
+rabbmitmq:
+    - {fileName: rabbitmq}
+redis:
+    - {fileName: redis}
 shell:
     - {fileName: ShellScript}
 shellscript:
     - {fileName: ShellScript}
 쉘스크립트:
     - {fileName: ShellScript}
+timezone:
+    - {fileName: timezone변경}
+uwsgi:
+    - {fileName: uwsgi}
+uwsgitop:
+    - {fileName: uwsgitop}
+vim:
+    - {fileName: vim}
 vimwiki:
     - {fileName: vimwiki}
+vscode:
+    - {fileName: vscode}
+포트열기:
+    - {fileName: 포트열기닫기}
+포트닫기:
+    - {fileName: 포트열기닫기}
+firewalld:
+    - {fileName: 포트열기닫기}
+port:
+    - {fileName: 포트열기닫기}
