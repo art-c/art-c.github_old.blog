@@ -100,7 +100,7 @@ index:
     summary: ""
     parent: ""
     url: /wiki/index
-    updated: '2020-05-07 18:15:58 +0900'
+    updated: '2020-05-07 18:54:25 +0900'
     children: []
 javascript:
     type: wiki
@@ -285,6 +285,14 @@ vscode:
     parent: ""
     url: /wiki/용어
     updated: '2020-01-21 19:49:38 +0900'
+    children: []
+유틸:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/유틸
+    updated: '2020-05-07 18:54:12 +0900'
     children: []
 포트열기닫기:
     type: wiki

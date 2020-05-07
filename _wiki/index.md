@@ -3,7 +3,7 @@ layout  : wiki
 title   : 
 summary : 
 date    : 2020-05-07 17:51:14 +0900
-updated : 2020-05-07 18:15:58 +0900
+updated : 2020-05-07 18:54:25 +0900
 tag     : 
 toc     : true
 public  : true
@@ -20,6 +20,7 @@ latex   : false
 * [[용어]]
 * [[celery]]
 * [[centos7]]
+	* [[유틸]] 
 	* [[firewalld]]
 	* [[ping막기]]
 	* [[timezone변경]]
