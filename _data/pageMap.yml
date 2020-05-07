@@ -190,6 +190,30 @@ strace:
     url: /wiki/strace
     updated: '2020-02-04 14:55:57 +0900'
     children: []
+TEST:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/TEST
+    updated: '2020-05-07 17:39:10 +0900'
+    children: []
+test:
+    type: wiki
+    title: null
+    summary: null
+    parent: null
+    url: /wiki/test
+    updated: '2020-05-07 17:25:13 +0900'
+    children: []
+TEST2:
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: /wiki/TEST2
+    updated: '2020-05-07 17:40:10 +0900'
+    children: []
 timezone변경:
     type: wiki
     title: timezone변경
@@ -220,7 +244,7 @@ vim:
     summary: 뭐..
     parent: index
     url: /wiki/vim
-    updated: '2020-01-15 17:42:43 +0900'
+    updated: '2020-05-07 17:38:50 +0900'
     children: [neovim, vimwiki]
 vimwiki:
     type: wiki

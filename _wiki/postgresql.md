@@ -1,19 +1,17 @@
 --
-layout : wiki
-title : postgresql
-summary : postgresql
-date : 2020-01-19 20:41:57 +0900
-updated : 2020-02-14 04:34:51 +0900
-tag : db, database
-toc : true
-public : true
-parent : database
-latex : false
-
+layout: wiki
+title: postgresql
+summary: postgresql
+date: 2020-01-19 20:41:57 +0900
+updated: 2020-05-07 17:31:22 +0900
+tag: db, database
+toc: true
+public: true
+parent: database
+latex: false
 ---
-
--   TOC
-    {:toc}
+- TOC
+{:toc}
 
 # postgresql
 
