@@ -1,8 +1,26 @@
+---
+layout  : wiki
+title   : 
+summary : 
+date    : 2020-05-07 19:39:04 +0900
+updated : 2020-05-07 20:40:42 +0900
+tag     : 
+toc     : true
+public  : true
+parent  : 
+latex   : false
+---
+* TOC
+{:toc}
+
+# 목차
+---
 * [[TEST]]
 * [[TEST2]]
 * [[용어]]
 * [[celery]]
 * [[centos7]]
+	* [[유틸]] 
 	* [[firewalld]]
 	* [[ping막기]]
 	* [[timezone변경]]
@@ -33,3 +51,4 @@
 * [[vim]]
     * [[vimwiki]]
     * [[neovim]]
+
