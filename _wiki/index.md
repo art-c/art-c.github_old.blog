@@ -1,13 +1,13 @@
 [[---]]
 layout  : wiki
-title   : 
-summary : 
+title   : Wiki
+summary : Wiki
 date    : 2020-05-07 17:51:14 +0900
-updated : 2020-05-07 19:00:28 +0900
-tag     : 
+updated : 2020-05-07 19:35:03 +0900
+tag     : 목차
 toc     : true
 public  : true
-parent  : 
+parent  : wiki
 latex   : false
 ---
 * TOC
