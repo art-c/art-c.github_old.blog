@@ -21,7 +21,7 @@ centos7:
     parent: index
     url: /wiki/centos7
     updated: '2020-02-09 11:07:47 +0900'
-    children: [ping막기, strace, timezone변경, 포트열기닫기]
+    children: [firewalld, ping막기, strace, timezone변경, 포트열기닫기]
 container:
     type: wiki
     title: container
@@ -45,7 +45,7 @@ database:
     parent: index
     url: /wiki/database
     updated: '2020-01-19 21:18:26 +0900'
-    children: []
+    children: [postgresql]
 datetime:
     type: wiki
     title: ""
@@ -76,7 +76,15 @@ docker-compose:
     summary: ""
     parent: ""
     url: /wiki/docker-compose
-    updated: '2020-05-05 11:24:35 +0900'
+    updated: '2020-05-07 17:58:15 +0900'
+    children: []
+firewalld:
+    type: wiki
+    title: firewall
+    summary: firewall
+    parent: centos7
+    url: /wiki/firewalld
+    updated: '2020-05-07 17:55:41 +0900'
     children: []
 git:
     type: wiki
@@ -116,7 +124,7 @@ neovim:
     summary: 'NeoVim 설치'
     parent: vim
     url: /wiki/neovim
-    updated: '2020-01-19 21:13:57 +0900'
+    updated: '2020-05-07 18:02:08 +0900'
     children: []
 ping막기:
     type: wiki
@@ -132,15 +140,15 @@ podman:
     summary: podman
     parent: container
     url: /wiki/podman
-    updated: '2020-01-16 19:22:19 +0900'
+    updated: '2020-05-07 18:04:05 +0900'
     children: []
 postgresql:
     type: wiki
-    title: null
-    summary: null
-    parent: null
+    title: postgresql
+    summary: postgresql
+    parent: database
     url: /wiki/postgresql
-    updated: null
+    updated: '2020-05-07 17:56:55 +0900'
     children: []
 python:
     type: wiki

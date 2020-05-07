@@ -2,12 +2,14 @@
 - 'coroutine,'
 - database
 - django
+- firewall
 - firewalld
 - git
 - neovim
 - ping막기
 - podman
 - port
+- postgresql
 - rabbmitmq
 - redis
 - shell

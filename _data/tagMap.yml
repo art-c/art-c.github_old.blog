@@ -8,6 +8,8 @@ database:
     - {fileName: database}
 django:
     - {fileName: django}
+firewall:
+    - {fileName: firewalld}
 git:
     - {fileName: git}
 neovim:
@@ -16,6 +18,8 @@ ping막기:
     - {fileName: ping막기}
 podman:
     - {fileName: podman}
+postgresql:
+    - {fileName: postgresql}
 rabbmitmq:
     - {fileName: rabbitmq}
 redis:

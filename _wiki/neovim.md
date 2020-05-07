@@ -1,22 +1,20 @@
 ---
-layout: wiki
-title: NeoVim 설치
-summary: NeoVim 설치
-date: 2020-01-16 03:32:51 +0900
-updated: 2020-01-19 21:13:57 +0900
-tag: neovim
-toc: true
-public: true
-parent: vim
-latex: false
+layout  : wiki
+title   : NeoVim 설치
+summary : NeoVim 설치
+date    : 2020-01-15 17:43:07 +0900
+updated : 2020-05-07 18:02:08 +0900
+tag     : neovim
+toc     : true
+public  : true
+parent  : vim
+latex   : false
 ---
-
--   TOC
-    {:toc}
+* TOC
+{:toc}
 
 # NeoVim
 
-#
 
 ## NeoVim 설치(centos8)
 

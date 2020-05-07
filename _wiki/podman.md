@@ -3,7 +3,7 @@ layout  : wiki
 title   : podman
 summary : podman
 date    : 2020-01-16 19:05:08 +0900
-updated : 2020-01-16 19:22:19 +0900
+updated : 2020-05-07 18:04:05 +0900
 tag     : podman
 toc     : true
 public  : true
@@ -30,4 +30,5 @@ identity - no mapping
 * hostnet - 호스트 네트워크 사용, 그리고 내부 컨테이너는 호스트의 gateway와 pubished port를 경유해서 통신한다
 * cntnet - 통신을 경유할 컨테이너 하나를 만든다. `--network container:name` (내부 컨테이너는 localhost 경유해서 통신한다.)
 * publishall - `-P` 옵션 호스트에 대해 모든 컨테이너가 포트를 pubished, gateway 를 경유해서 통신함.
-* 
+
+### hi TEST
