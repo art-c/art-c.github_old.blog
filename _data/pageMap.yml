@@ -96,11 +96,11 @@ git:
     children: []
 index:
     type: wiki
-    title: Wiki
-    summary: Wiki
+    title: ""
+    summary: ""
     parent: ""
     url: /wiki/index
-    updated: '2020-05-07 19:37:32 +0900'
+    updated: '2020-05-07 19:40:45 +0900'
     children: []
 javascript:
     type: wiki

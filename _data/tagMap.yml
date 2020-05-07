@@ -12,8 +12,6 @@ firewall:
     - {fileName: firewalld}
 git:
     - {fileName: git}
-목차:
-    - {fileName: index}
 neovim:
     - {fileName: neovim}
 ping막기:
