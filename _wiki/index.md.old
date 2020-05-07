@@ -1,20 +1,3 @@
----
-layout  : wiki
-title   : 
-summary : 
-date    : 2020-05-07 17:51:14 +0900
-updated : 2020-05-07 17:51:36 +0900
-tag     : 
-toc     : true
-public  : true
-parent  : 
-latex   : false
----
-* TOC
-{:toc}
-
-# 목차
-
 * [[TEST]]
 * [[TEST2]]
 * [[용어]]
