@@ -3,11 +3,11 @@ layout  : wiki
 title   : Wiki
 summary : Wiki
 date    : 2020-05-07 17:51:14 +0900
-updated : 2020-05-07 19:35:03 +0900
+updated : 2020-05-07 19:37:32 +0900
 tag     : 목차
 toc     : true
 public  : true
-parent  : wiki
+parent  : 
 latex   : false
 ---
 * TOC

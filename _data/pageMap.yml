@@ -98,9 +98,9 @@ index:
     type: wiki
     title: Wiki
     summary: Wiki
-    parent: wiki
+    parent: ""
     url: /wiki/index
-    updated: '2020-05-07 19:35:03 +0900'
+    updated: '2020-05-07 19:37:32 +0900'
     children: []
 javascript:
     type: wiki
