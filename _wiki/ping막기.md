@@ -3,14 +3,14 @@ layout: wiki
 title: ping막기
 summary: ping막기
 date: 2020-02-02 09:44:35 +0900
-updated: 2020-07-05 20:00:50 +0900
+updated: 2020-07-05 20:02:56 +0900
 tag: ping막기
 toc: true
 public: true
 parent: centos7
 latex: false
 ---
-- TOC
+* TOC
 {:toc}
 
 # centos7d에서 ping 막기
