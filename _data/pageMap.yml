@@ -28,7 +28,7 @@ centos7:
     summary: ""
     parent: index
     url: /wiki/centos7
-    updated: '2020-02-09 11:07:47 +0900'
+    updated: '2020-07-05 23:37:40 +0900'
     children: [firewalld, ping막기, strace, timezone변경, 포트열기닫기]
 container:
     type: wiki
@@ -52,7 +52,7 @@ database:
     summary: database
     parent: index
     url: /wiki/database
-    updated: '2020-01-19 21:18:26 +0900'
+    updated: '2020-07-05 23:36:12 +0900'
     children: [postgresql]
 datetime:
     type: wiki
@@ -76,7 +76,7 @@ docker:
     summary: ""
     parent: ""
     url: /wiki/docker
-    updated: '2020-05-05 11:24:35 +0900'
+    updated: '2020-07-06 00:08:59 +0900'
     children: []
 docker-compose:
     type: wiki
@@ -116,7 +116,7 @@ index:
     summary: Index
     parent: ""
     url: /wiki/index
-    updated: '2020-07-05 21:04:01 +0900'
+    updated: '2020-07-06 01:47:23 +0900'
     children: []
 javascript:
     type: wiki
@@ -284,7 +284,7 @@ vimwiki:
     summary: 'vimwiki에 대한 내용'
     parent: vim
     url: /wiki/vimwiki
-    updated: '2020-01-19 21:08:29 +0900'
+    updated: '2020-07-05 21:25:02 +0900'
     children: []
 vscode:
     type: wiki
@@ -293,6 +293,22 @@ vscode:
     parent: ""
     url: /wiki/vscode
     updated: '2020-01-21 15:21:36 +0900'
+    children: []
+독서:
+    type: wiki
+    title: 독서리스트
+    summary: 독서리스트
+    parent: index
+    url: /wiki/독서
+    updated: '2020-07-06 01:47:23 +0900'
+    children: [세상에서가장쉬운통계학입문]
+세상에서가장쉬운통계학입문:
+    type: wiki
+    title: 세상에서가장쉬운통계학입문
+    summary: '통계학 입문서'
+    parent: 독서
+    url: /wiki/세상에서가장쉬운통계학입문
+    updated: '2020-07-06 01:38:52 +0900'
     children: []
 용어:
     type: wiki

@@ -48,6 +48,14 @@ vimwiki:
     - {fileName: vimwiki}
 vscode:
     - {fileName: vscode}
+'독서,':
+    - {fileName: 독서}
+독서리스트:
+    - {fileName: 독서}
+'통계학,':
+    - {fileName: 세상에서가장쉬운통계학입문}
+통계:
+    - {fileName: 세상에서가장쉬운통계학입문}
 포트열기:
     - {fileName: 포트열기닫기}
 포트닫기:
