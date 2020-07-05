@@ -3,7 +3,7 @@ layout  : wiki
 title   : Index
 summary : Index
 date    : 2020-05-07 22:10:59 +0900
-updated : 2020-07-05 23:56:56 +0900
+updated : 2020-07-06 01:36:20 +0900
 tag     : Index
 toc     : true
 public  : true
@@ -69,4 +69,6 @@ latex   : false
 ---
 * [[vimwiki]]
 * [[neovim]]
-
+## [[독서]]
+---
+* [[세상에서가장쉬운통계학입문]]
