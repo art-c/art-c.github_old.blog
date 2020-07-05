@@ -3,7 +3,7 @@ layout  : wiki
 title   : vimwiki 설명
 summary : vimwiki에 대한 내용
 date    : 2020-01-15 17:43:07 +0900
-updated : 2020-01-19 21:08:29 +0900
+updated : 2020-07-05 21:25:02 +0900
 tag     : vimwiki
 toc     : true
 public  : true
@@ -29,8 +29,8 @@ latex   : false
 
 ./generateData.js
 git add _data
-
 ```
+# 분명 generateData.js  파일이 실행될 때 ymal이 없다는 에러가 날 것이다. `yarn add ymal`로 해결한다.
 
     - git commit 시  `hook excutable` 관련 에러 : chmode 775 generageData.js 후 실행하면 된다.
 
@@ -45,6 +45,8 @@ git add _data
     * [ ] Open Graph 제목
     * [ ] Open Graph 설명
     * [ ] Open Graph 앱링크
+
+6. 
 
 
 
