@@ -3,7 +3,7 @@ layout  : wiki
 title   : Index
 summary : Index
 date    : 2020-05-07 22:10:59 +0900
-updated : 2020-07-05 19:49:30 +0900
+updated : 2020-07-05 21:04:01 +0900
 tag     : Index
 toc     : true
 public  : true
@@ -14,6 +14,7 @@ latex   : false
 {:toc}
 
 # 목차 
+---
 * [[hi]]
 	* [[abc]] 
 * [[TEST]]
