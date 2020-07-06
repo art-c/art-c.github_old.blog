@@ -148,7 +148,7 @@ numpy:
     summary: numpy
     parent: 데이터분석
     url: /wiki/numpy
-    updated: '2020-07-06 20:14:28 +0900'
+    updated: '2020-07-06 20:16:45 +0900'
     children: []
 ping막기:
     type: wiki
@@ -220,7 +220,7 @@ ShellScript:
     summary: 'ShellScript 배우기'
     parent: Script
     url: /wiki/ShellScript
-    updated: '2020-01-16 01:54:32 +0900'
+    updated: '2020-07-07 00:45:58 +0900'
     children: []
 strace:
     type: wiki

@@ -3,7 +3,7 @@ layout  : wiki
 title   : ShellScript
 summary : ShellScript 배우기
 date    : 2020-01-15 23:59:22 +0900
-updated : 2020-01-16 01:54:32 +0900
+updated : 2020-07-07 00:45:58 +0900
 tag     : shell shellscript 쉘스크립트 
 toc     : true
 public  : true
@@ -97,5 +97,25 @@ ech hi 2> /dev/null
 * 리눅스 명령을 넣으면 결과 반환
 * 예제
  
-` \`echo expr 1 = 3\` `
+`\`echo expr 1 = 3\``
+
+
+## 쉘 내부에서 또 다른 쉘 실행시키기
+* 보통 아무생각없이 쉘 내부에서 다른 쉘을 실행시키는 경우가 있다. 이런 경우 내부에서 실행되는 쉘이 제대로 실행되지 않을 경우가 있다.
+* 쉘프로그램에 익숙하지 않아서 원인을 정확히 파악하지는 못했다.
+* 예를들어 DB 도커 컨테이너가 있다고 하자. 볼륨설정은 못하고 이미 데이터가 많이 쌓인 경우 운영을 계속하려면 백업을 주기적으로 해야한다.
+* 이 때 다음과 같이 명령을 실행하여 DB를 백업할 수 있다(여기에선 MariaDB를 사용한다고 가정하자.)
+- `docker exec -it container_name mysqldump -uuser_name -ppasswd db_name > backup.sql`
+* 직접실행할 때는 `-i`나 `-t` 옵션을 넣어도 상관이 없는 것 같다.
+* 어쨌든 이 작업을 `crontab`에게 넘겨주기 위해서 쉘 스크립트를 작성해야한다. 만약 위 내용을 그대로 쉘스크립트에 넣으면 제대로 동작하지 않음을 알 수 있다.
+* 내가 알아낸 이유는 쉘 내부에서 또 다른 쉘을 실행시는 것이기 때문이다. 위 예에서는 mysqldump는 컨테이너 내부의 쉘에서 실행된다.
+* 물론 위 명령을 직접 실행하면 문제는 없지만  cron -> host shell -> container shell 이렇게 3단계부터는 문제가 생겼다.(경험상, 이유는 모름)
+* 따라서 이럴 땐  `-c` 커맨드 옵션을 통해서 내부에서 실행되는 쉘을 실행히키면 문제는 해결된다. 
+- `docker exec -it container_name bash -c "mysqldump -uuser_name -ppasswd db_name > backup.sql"`
+* 그런데 위와 같이 실행할 경우 `backup.sql`이 컨테이너 내부에 생성된다. 이전 명령은 호스트에 `backup.sql`이 생성되는데 말이다.
+* 이유는 -c 옵션 뒤 명령은 컨테이너 쉘에서 모두 실행되기 때문이다. 
+* 따라서 이를 해결하려면 컨테이너 내부에 백업파일을 우선 저장해 놓고, 그 뒤에 `docker cp` 명령으로 `backup.sql`을 외부로 빼내면 된다.
+- `docker cp container_name:/file/path/backup.sql /home/my/db/`
+  
+
 
