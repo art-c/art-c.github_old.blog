@@ -3,7 +3,7 @@ layout  : wiki
 title   : Index
 summary : Index
 date    : 2020-05-07 22:10:59 +0900
-updated : 2020-07-06 01:50:16 +0900
+updated : 2020-07-06 19:04:41 +0900
 tag     : Index
 toc     : true
 public  : true
@@ -15,6 +15,10 @@ latex   : false
 
 ## 목차 
 ---
+## [[데이터분석]]
+---
+* [[numpy]]
+
 * [[hi]]
 	* [[abc]] 
 * [[TEST]]
