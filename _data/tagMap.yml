@@ -20,6 +20,8 @@ Index:
     - {fileName: index}
 neovim:
     - {fileName: neovim}
+numpy:
+    - {fileName: numpy}
 ping막기:
     - {fileName: ping막기}
 podman:
