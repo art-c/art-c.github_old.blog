@@ -220,7 +220,7 @@ ShellScript:
     summary: 'ShellScript 배우기'
     parent: Script
     url: /wiki/ShellScript
-    updated: '2020-07-07 00:45:58 +0900'
+    updated: '2020-07-07 00:48:20 +0900'
     children: []
 strace:
     type: wiki

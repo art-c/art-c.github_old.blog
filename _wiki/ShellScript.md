@@ -3,7 +3,7 @@ layout  : wiki
 title   : ShellScript
 summary : ShellScript 배우기
 date    : 2020-01-15 23:59:22 +0900
-updated : 2020-07-07 00:45:58 +0900
+updated : 2020-07-07 00:48:20 +0900
 tag     : shell shellscript 쉘스크립트 
 toc     : true
 public  : true
@@ -112,6 +112,7 @@ ech hi 2> /dev/null
 * 물론 위 명령을 직접 실행하면 문제는 없지만  cron -> host shell -> container shell 이렇게 3단계부터는 문제가 생겼다.(경험상, 이유는 모름)
 * 따라서 이럴 땐  `-c` 커맨드 옵션을 통해서 내부에서 실행되는 쉘을 실행히키면 문제는 해결된다. 
 - `docker exec -it container_name bash -c "mysqldump -uuser_name -ppasswd db_name > backup.sql"`
+- 위 명령은`the input device is not a TTY` 에러를 발생시킨다. `-it` 옵션을 제거하면 해결된다.
 * 그런데 위와 같이 실행할 경우 `backup.sql`이 컨테이너 내부에 생성된다. 이전 명령은 호스트에 `backup.sql`이 생성되는데 말이다.
 * 이유는 -c 옵션 뒤 명령은 컨테이너 쉘에서 모두 실행되기 때문이다. 
 * 따라서 이를 해결하려면 컨테이너 내부에 백업파일을 우선 저장해 놓고, 그 뒤에 `docker cp` 명령으로 `backup.sql`을 외부로 빼내면 된다.
