@@ -148,7 +148,7 @@ numpy:
     summary: numpy
     parent: 데이터분석
     url: /wiki/numpy
-    updated: '2020-07-06 20:16:45 +0900'
+    updated: '2020-07-11 15:41:30 +0900'
     children: []
 ping막기:
     type: wiki

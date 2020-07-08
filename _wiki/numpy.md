@@ -3,7 +3,7 @@ layout  : wiki
 title   : numpy
 summary : numpy
 date    : 2020-07-06 18:11:36 +0900
-updated : 2020-07-06 20:16:45 +0900
+updated : 2020-07-11 15:41:30 +0900
 tag     : numpy
 toc     : true
 public  : true
@@ -50,8 +50,15 @@ np.sort(a, order=['age', 'height'])
 ** 추가: np.asarry를 사용할 때 이미 dtype이 정해진 array에 적용하려면 위에 열거한 것과 동일한 문제가 다시 발생하므로, 만약 여러 structured array를 합치는 작업을 한다면 합치기 전에 개별 array들의 dtype을 맞게 적용해줘야 한다. 이렇게 하면 합칠 때 굳이 dtype을 적용하지 않아도 된다.
 
 
-## numpy 배열에서 values_counts와 비슷하게 사용하는 방법
+### numpy 배열에서 values_counts와 비슷하게 사용하는 방법
 [[https://stackoverflow.com/questions/10741346/numpy-most-efficient-frequency-counts-for-unique-values-in-an-array | 참고]]
 ```
 value, counts = np.unique(array, return_counts=True)
 ```
+
+### numpy 에서 one hot encoding하기
+```python
+np.eye(num)[target]
+```
+- num은 차원을 말하며 target은 0~num 사이의 값이다. 예를들어 'apple', 'banana', 'orange' 이렇게 세계의 카테고리 변수를 원핫인코딩할 때 각각 0, 1, 2에 대응시켜 target으로 만들어 원핫인코딩하면 된다.
+
