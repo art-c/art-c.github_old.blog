@@ -20,7 +20,7 @@ c++:
     summary: c++
     parent: index
     url: /wiki/c++
-    updated: '2020-07-11 16:02:06 +0900'
+    updated: '2020-07-11 16:55:34 +0900'
     children: [oop, template]
 celery:
     type: wiki
@@ -165,6 +165,14 @@ numpy:
     parent: 데이터분석
     url: /wiki/numpy
     updated: '2020-07-11 15:41:30 +0900'
+    children: []
+'Object Alignment':
+    type: wiki
+    title: ""
+    summary: ""
+    parent: ""
+    url: '/wiki/Object Alignment'
+    updated: '2020-07-11 16:55:34 +0900'
     children: []
 oop:
     type: wiki
@@ -342,6 +350,14 @@ vscode:
     url: /wiki/vscode
     updated: '2020-01-21 15:21:36 +0900'
     children: []
+데이터분석:
+    type: wiki
+    title: 데이터분석
+    summary: 데이터분석
+    parent: index
+    url: /wiki/데이터분석
+    updated: '2020-07-11 16:35:09 +0900'
+    children: [numpy]
 독서:
     type: wiki
     title: 독서리스트

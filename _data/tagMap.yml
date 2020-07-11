@@ -61,6 +61,8 @@ vimwiki:
     - {fileName: vimwiki}
 vscode:
     - {fileName: vscode}
+데이터분석:
+    - {fileName: 데이터분석}
 '독서,':
     - {fileName: 독서}
 독서리스트:
