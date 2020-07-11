@@ -14,6 +14,14 @@ base:
     url: /wiki/base
     updated: '2020-02-24 22:12:29 +0900'
     children: []
+c++:
+    type: wiki
+    title: c++
+    summary: c++
+    parent: index
+    url: /wiki/c++
+    updated: '2020-07-11 16:02:06 +0900'
+    children: [oop, template]
 celery:
     type: wiki
     title: ""
@@ -86,6 +94,14 @@ docker-compose:
     url: /wiki/docker-compose
     updated: '2020-05-07 17:58:15 +0900'
     children: []
+Encapsulation:
+    type: wiki
+    title: Encapsulation
+    summary: Encapsulation
+    parent: oop
+    url: /wiki/Encapsulation
+    updated: '2020-07-11 16:00:12 +0900'
+    children: []
 firewalld:
     type: wiki
     title: firewall
@@ -116,7 +132,7 @@ index:
     summary: Index
     parent: ""
     url: /wiki/index
-    updated: '2020-07-06 19:04:41 +0900'
+    updated: '2020-07-11 16:02:06 +0900'
     children: []
 javascript:
     type: wiki
@@ -150,6 +166,14 @@ numpy:
     url: /wiki/numpy
     updated: '2020-07-11 15:41:30 +0900'
     children: []
+oop:
+    type: wiki
+    title: oop
+    summary: oop
+    parent: c++
+    url: /wiki/oop
+    updated: '2020-07-11 16:02:06 +0900'
+    children: [Encapsulation, Polymorphism]
 ping막기:
     type: wiki
     title: ping막기
@@ -165,6 +189,14 @@ podman:
     parent: container
     url: /wiki/podman
     updated: '2020-05-07 18:04:05 +0900'
+    children: []
+Polymorphism:
+    type: wiki
+    title: Polymorphism
+    summary: Polymorphism
+    parent: oop
+    url: /wiki/Polymorphism
+    updated: '2020-07-11 16:01:40 +0900'
     children: []
 postgresql:
     type: wiki
@@ -229,6 +261,14 @@ strace:
     parent: centos7
     url: /wiki/strace
     updated: '2020-02-04 14:55:57 +0900'
+    children: []
+template:
+    type: wiki
+    title: template
+    summary: template
+    parent: c++
+    url: /wiki/template
+    updated: '2020-07-11 15:56:17 +0900'
     children: []
 TEST:
     type: wiki
@@ -316,7 +356,7 @@ vscode:
     summary: '통계학 입문서'
     parent: 독서
     url: /wiki/세상에서가장쉬운통계학입문
-    updated: '2020-07-07 19:49:07 +0900'
+    updated: '2020-07-11 15:53:20 +0900'
     children: []
 용어:
     type: wiki

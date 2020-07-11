@@ -3,7 +3,7 @@ layout  : wiki
 title   : Index
 summary : Index
 date    : 2020-05-07 22:10:59 +0900
-updated : 2020-07-06 19:04:41 +0900
+updated : 2020-07-11 16:02:06 +0900
 tag     : Index
 toc     : true
 public  : true
@@ -25,6 +25,9 @@ latex   : false
 * [[TEST2]]
 * [[용어]]
 * [[celery]]
+ 
+ 
+* [[c++]] 
  
 ## [[centos7]]
 ---

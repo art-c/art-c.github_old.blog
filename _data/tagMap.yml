@@ -1,5 +1,8 @@
 ii:
     - {fileName: abc}
+c++:
+    - {fileName: c++}
+    - {fileName: template}
 container:
     - {fileName: container}
 'coroutine,':
@@ -10,6 +13,8 @@ database:
     - {fileName: database}
 django:
     - {fileName: django}
+Encapsulation:
+    - {fileName: Encapsulation}
 firewall:
     - {fileName: firewalld}
 git:
@@ -22,10 +27,14 @@ neovim:
     - {fileName: neovim}
 numpy:
     - {fileName: numpy}
+oop:
+    - {fileName: oop}
 ping막기:
     - {fileName: ping막기}
 podman:
     - {fileName: podman}
+Polymorphism:
+    - {fileName: Polymorphism}
 postgresql:
     - {fileName: postgresql}
 rabbmitmq:
@@ -38,6 +47,8 @@ shellscript:
     - {fileName: ShellScript}
 쉘스크립트:
     - {fileName: ShellScript}
+'template,':
+    - {fileName: template}
 timezone:
     - {fileName: timezone변경}
 uwsgi:
