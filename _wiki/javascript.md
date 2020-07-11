@@ -3,7 +3,7 @@ layout  : wiki
 title   : 
 summary : 
 date    : 2020-02-11 14:25:43 +0900
-updated : 2020-07-08 11:51:10 +0900
+updated : 2020-07-11 15:48:36 +0900
 tag     : 
 toc     : true
 public  : true
@@ -15,16 +15,18 @@ latex   : false
 
 # 
 
+
 ### 기본
 * 자바스크립트에서 var를 사용해야하지 말고 let을 써야하는 이유.
-> hoisting 문법 때문이다. (hoisting이란 선언을 코드의 맨 위로 끌어올려주는 기능이다.)
-> 블럭 scope를 무시한다.
-> 위 기능들은 당장은 편리할 수 있으나, 프로젝트가 커지면 문제가 될 수 있다.
+> hoisting 문법 때문이다. (hoisting이란 선언을 코드의 맨 위로 끌어올려주는 기능이다., 함수의 선언 역시 마찬가지)  
+> 블럭 scope를 무시한다.  
+> 위 기능들은 당장은 편리할 수 있으나, 프로젝트가 커지면 문제가 될 수 있다.  
 * 최근 bigint의 추가 
-> 자바스크립트의 기본 숫자 범위 `-2**53 ~ 2**53` 
-> bigint -> 숫자의 끝에 n을 추가
-> const mybigint = 123123213123123123123123123123n;
-> 현지 지원되는 브라우저가 크롬 정도다.
+> 자바스크립트의 기본 숫자 범위 `-2**53 ~ 2**53`  
+> bigint -> 숫자의 끝에 n을 추가  
+
+> `const mybigint = 123123213123123123123123123123n;`  
+> 현지 지원되는 브라우저가 크롬 정도다.  
 * Symbol
 > 일종의 identy를 지정하는 것 같다.
 ```javascript
@@ -48,27 +50,27 @@ myvar.charAt(0)
 ```
 
 * 메모리에 값이 저장되는 방식  primitive, object
-> primitive는 값 자체를 저장하는 형태
+> primitive는 값 자체를 저장하는 형태  
 > object는 덩치가 크기 때문에 ref를 저장하는 형태
 
 * 데이터타입의 종류
-> mutable, immutable
-> immutable data types : primitive types, frozen objects (i.e. object.freeze())
-> mutable data types : all objects by default are mutable in JS
-> 다음과 같은 이유로 immutable 데이터 타입을 사용해라
-> security
-> thread safety
-> reduce human mistakes
+> mutable, immutable  
+> immutable data types : primitive types, frozen objects (i.e. object.freeze())  
+> mutable data types : all objects by default are mutable in JS  
+> 다음과 같은 이유로 immutable 데이터 타입을 사용해라  
+> security  
+> thread safety  
+> reduce human mistakes  
 
 * 비교연산
-> - == 와 ===의 차이점
+> == 와 ===의 차이점  
 > ==는 값이 같은지 검사, ===는 값과 타입이 같은지 검사
 ```javascript
 a = {name: 'kk'} //object 타입 ref가 저장됨
 b = {name: 'kk'}
 a == b //false //a와 b는 ref가 다르기 때문에
 ```
-```
+```javascript
 null == undefined //true
 null === undefined //false
 0 == fale //true
@@ -77,9 +79,146 @@ null === undefined //false
 '' === false //false
 ```
 
+* ...args
+> 여러개의 인자를 받아서 배열로 만들어준다.
+`function test(...args) {` 이렇게 선언하고, `test(1,2,3,4)` 이렇게 여러 인자를 전달하면 함수 내부에서 `args=[1,2,3,4]`로 선언한 것 처럼 사용할 수 있다.
+
+* forEach와 map의 차이점
+
+* 모든 함수의 기본 리턴값
+`return undefined`
+
+* Early return, early exit
+
+* 함수이름을 사용해서 디버깅 시 노출 시키기
+`const myfunction = function myfunction() { ...` function다음에 함수이름을 안써도 되지만 디버깅을 위해 쓴다.
+
+* class
+> **getter와 setter**  
+```javascript
+class User {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;  // 여기에서 age는 setter의 이름. 그리고 이 동작은 setter를 호출한다.
+	}
+	
+	get age() {
+		return this._age; // 실제 사용되는 변수는 _age
+	}
+	
+	set age(value) {
+		if (value <0) {
+			throw Error('age can not be negative');
+		}
+		this._age = value; // this.age라고 하면 age 무한 호출. 따라서 내부 변수이름을 동일하게 사용하지 않는다.
+	}
+}
+const user1 = new User("ju", 99);
+console.log(user.age);
+```
+
+> **public 과 private**  
+```javascript
+class Test {
+  name = 'juhyun'
+  #privatevalue = 333;
+}
+```
+
+> **static**  
+> 클래스 이름으로 호출, 생성된 객체로 호출 못함(C++은 호출 가능하다고 기억)  
+
+> `extends` 키워드로 상속.  
+> `super` 부모 클래스를 의미함.  
+
+> `instanceof` - 인스턴스 instanceof 클래스  -> true or false  
+
+> `toString` 메서드 , python의 `__str__` 메서드와 비슷
+
+* Objects
+> const obj1 = {};   //'Object literal' syntax
+> const obj2 = new Object();  // 'Object constructor' syntax
+
+> **Property value shorhand**  
+```javascript
+function makePerson(name, age) {
+		return {
+		name,
+		age,
+	}
+}
+value = makePerson("ju', 99)
+//위 함수의 리턴값: {name: 'ju', age: 99}
+// 아래 함수와 같이 쓸 수도 있음
+
+// Constructor Function
+function Person(name, age) {
+	this.name = name;
+	this.age = age
+}
+
+```
+
+> **in operator**
+```javascript
+console.log( 'name' in user1 ); //user1에 'name'이라는 key가 있는지.
+console.log( user1.novalue ); //user1에 novalue가 없으면 undefined
+```
+
+> **for..in**
+```javascript
+for (key in user1) {
+	console.log(key	
+}
+```
+
+>  **for..of**
+```javascript
+const array = [1,2,3,4];
+for(let i = 0; i < array.length; i++) {
+	console.log(array);
+}
+//위와 동일한 for .. of 
+for(value of array) {  // python에서는 in으로 다되는데..
+	console.log(value);
+}
+```
+
+> **cloning**
+
+```javascript
+// oldway
+const user3 = {};
+for (key in user) {
+	user3[key] = user[key];
+}
+
+// new way
+const user4 = {};
+Object.assign(user4, user); 
+console.log(user4);
+user4 = Object.assign({}, user);// 또는 리턴값을 받아서 사용해도 된다.
+
+
+//another example
+const fruit1 = {color: 'red'};
+const fruit2 = {color: 'blue', size: 'big};
+const mixed = Object.assign({}, fruit1, fruit2);
+console.log(mixed.color); // 'blue' 같은 key가 있다면 뒤에 있는 값이 덮어씌워진다.
+console.log(mixed.size); //'big
+
+```
+
+
+
+
+
+
+
+
 
 ### package.json
-* 패키지 매니져.. 모듈을 설치하면 자동으로 생성.. node_modules 디렉토리가 없더라도(git push 할 때 node_module은 .gitignore에 기록됨.), package.json이 있다면 `yanr install`로 동일한 환경으로 개발 할 수 있음.
+* 패키지 매니져.. 모듈을 설치하면 자동으로 생성.. node_modules 디렉토리가 없더라도(git push 할 때 node_module은 .gitignore에 기록됨.) package.json이 있다면 `yanr install`로 동일한 환경으로 개발 할 수 있음. 
 
 ### 자바스크립트와 json
 
@@ -95,4 +234,6 @@ null === undefined //false
  > JSON.parse(jsonData)
  > 용량이 큰 대신 문자열화 하는 오버헤드가 없다. 대신 웹상에서 전달될 때는 용량이 더 큰 점을 감안해야함. 
  > 결국 상황에 맞게 두 가지 방식을 사용..
+
+
 
