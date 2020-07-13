@@ -253,7 +253,7 @@ console.log(b)// [1, 3,4,5,6, 4]
 
 > slice(start?: number, end?: number): T[];   // 새로운 배열 반환  
 
-> find
+> find  
 ```javascript
 const students = [
 	new Student('A', 29, true, 45),
@@ -268,14 +268,14 @@ const result = students.find(function (student, index) { // 콜백함수는 stud
 } )
 
 ```
-> filter
+> filter  
 ```javascript
 const result = students.filter(function (student) {
 	return student.enrolled;  //enrolled는 학생 클래스의 세번째 변수
 } )
 ```
 
-> map 
+> map   
 ```javascript
 const result = students.map(function (student) {
 	return student.score * 2;  // 새로운  배열요소
@@ -297,7 +297,7 @@ const result = students.every(function (student) {
 } )
 ```
 
-> reduce 
+> reduce  
 ```javascript
 a = [1,2,3,4,5]
 a.reduce((pre, cur) => pre + cur); // 15 
