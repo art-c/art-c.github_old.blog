@@ -38,8 +38,8 @@ const b = Symbol('abc');
 const a = Symbol.for('abc');
 const b = Symbol.for('abc');
 ```
-> 이렇게 하면 (a===b)는 true를 가진다.
-> Symbol을 출력하려면 
+> 이렇게 하면 (a===b)는 true를 가진다.  
+> Symbol을 출력하려면  
 ```javascript
 console.log(a.description) 
 ```
@@ -79,7 +79,7 @@ null === undefined //false
 '' === false //false
 ```
 
-* ...args
+> ...args  
 > 여러개의 인자를 받아서 배열로 만들어준다.
 `function test(...args) {` 이렇게 선언하고, `test(1,2,3,4)` 이렇게 여러 인자를 전달하면 함수 내부에서 `args=[1,2,3,4]`로 선언한 것 처럼 사용할 수 있다.
 
@@ -94,7 +94,8 @@ null === undefined //false
 `const myfunction = function myfunction() { ...` function다음에 함수이름을 안써도 되지만 디버깅을 위해 쓴다.
 
 * class
-> **getter와 setter**  
+> getter와 setter    
+
 ```javascript
 class User {
 	constructor(name, age) {
@@ -117,7 +118,7 @@ const user1 = new User("ju", 99);
 console.log(user.age);
 ```
 
-> **public 과 private**  
+> public 과 private  
 ```javascript
 class Test {
   name = 'juhyun'
@@ -125,7 +126,7 @@ class Test {
 }
 ```
 
-> **static**  
+> static  
 > 클래스 이름으로 호출, 생성된 객체로 호출 못함(C++은 호출 가능하다고 기억)  
 
 > `extends` 키워드로 상속.  
@@ -135,11 +136,14 @@ class Test {
 
 > `toString` 메서드 , python의 `__str__` 메서드와 비슷
 
-* Objects
-> const obj1 = {};   //'Object literal' syntax
-> const obj2 = new Object();  // 'Object constructor' syntax
+> Objects  
 
-> **Property value shorhand**  
+```
+const obj1 = {};   //'Object literal' syntax
+const obj2 = new Object();  // 'Object constructor' syntax
+```
+> Property value shorhand  
+
 ```javascript
 function makePerson(name, age) {
 		return {
@@ -156,23 +160,22 @@ function Person(name, age) {
 	this.name = name;
 	this.age = age
 }
-
 ```
 
-> **in operator**
+> in operator  
 ```javascript
 console.log( 'name' in user1 ); //user1에 'name'이라는 key가 있는지.
 console.log( user1.novalue ); //user1에 novalue가 없으면 undefined
 ```
 
-> **for..in**
+> for..in  
 ```javascript
 for (key in user1) {
 	console.log(key	
 }
 ```
 
->  **for..of**
+>  for..of  
 ```javascript
 const array = [1,2,3,4];
 for(let i = 0; i < array.length; i++) {
@@ -184,9 +187,9 @@ for(value of array) {  // python에서는 in으로 다되는데..
 }
 ```
 
-> **cloning**
+> cloning  
 
-```javascript
+```javascript  
 // oldway
 const user3 = {};
 for (key in user) {
@@ -208,7 +211,7 @@ console.log(mixed.color); // 'color' 같이 key가 있다면 뒤에 있는 값�
 console.log(mixed.size); //'big
 ```
 
-> Array
+> Array  
 ```Javascript
 a = [1,2,3,4];
 a.shift() // <- 로 이동 결과: [2,3,4]
