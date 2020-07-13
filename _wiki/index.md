@@ -1,4 +1,4 @@
-[[---]]
+---
 layout  : wiki
 title   : Index
 summary : Index
