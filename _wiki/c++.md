@@ -3,7 +3,7 @@ layout  : wiki
 title   : c++
 summary : c++
 date    : 2020-07-11 15:54:35 +0900
-updated : 2020-07-11 16:55:34 +0900
+updated : 2020-07-12 12:49:42 +0900
 tag     : c++
 toc     : true
 public  : true
@@ -17,3 +17,4 @@ latex   : false
 * [[template]]
 * [[oop]]
 * [[Object Alignment]]
+* 

@@ -27,6 +27,10 @@ neovim:
     - {fileName: neovim}
 numpy:
     - {fileName: numpy}
+object:
+    - {fileName: 'Object Alignment'}
+alignment:
+    - {fileName: 'Object Alignment'}
 oop:
     - {fileName: oop}
 ping막기:

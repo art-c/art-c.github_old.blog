@@ -3,7 +3,7 @@ layout  : wiki
 title   : 
 summary : 
 date    : 2020-02-11 14:25:43 +0900
-updated : 2020-07-11 15:48:36 +0900
+updated : 2020-07-13 13:49:19 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,7 +12,7 @@ latex   : false
 ---
 * TOC
 {:toc}
-
+ 
 # 
 
 
@@ -202,20 +202,111 @@ user4 = Object.assign({}, user);// 또는 리턴값을 받아서 사용해도 �
 
 //another example
 const fruit1 = {color: 'red'};
-const fruit2 = {color: 'blue', size: 'big};
+const fruit2 = {color: 'blue', size: 'big'};
 const mixed = Object.assign({}, fruit1, fruit2);
-console.log(mixed.color); // 'blue' 같은 key가 있다면 뒤에 있는 값이 덮어씌워진다.
+console.log(mixed.color); // 'color' 같이 key가 있다면 뒤에 있는 값이 덮어씌워진다.
 console.log(mixed.size); //'big
+```
+
+> Array
+```Javascript
+a = [1,2,3,4];
+a.shift() // <- 로 이동 결과: [2,3,4]
+a.unshift(99) // 앞에 추가 결과: [99,2,3,4]
+```
+* `unshift`와 `shift`는 `push`와 `pop`에 보다 훨씬 느리다.
+* 앞에 추가하는 경우 뒤의 요소들을 모두 한칸씩 뒤로 밀어내야하므로.
+
+> splice
+```javascript
+a = [1,2,3,4]
+
+a.splice(1,2) // index 1부터 2개를 지운다.
+
+
+b = [1,2,3,4]
+
+b.splice(1,2,3,4,5,6) // 2,3을 지우고 그 자리에 3, 4,5,6을 넣는다.
+
+// 반환값은 지워진 값 [2,3] 배열이다.
+console.log(b)// [1, 3,4,5,6, 4]
 
 ```
 
+> concat  
+
+> `indexOf(value)` - `value`의 `index` 알아내기, 없으면 **-1** 출력  
+
+> `includes(value)` - `value`의 존재유무, 있으면 `true` 없으면 `false`  
+
+> `lastIndexOf` - `indexOf`는 동일한 값중 가장 앞에 인덱스를, `lastIndexOf`는 가장 마지막의 인덱스를 반환  
 
 
+* array 메소드 api
+> join  
+
+> split  
+
+> reverse  
+
+> splice     //배열 자체를 변경시킴
+
+> slice(start?: number, end?: number): T[];   // 새로운 배열 반환  
+
+> find
+```javascript
+const students = [
+	new Student('A', 29, true, 45),
+	new Student('B', 28, false, 80),
+	new Student('C', 30, true, 90),
+	new Student('D', 40, false, 66),
+	new Student('E', 18, true, 88),
+];
+
+const result = students.find(function (student, index) { // 콜백함수는 students의 모든 요소에 대해 각각 호출된다.
+	return student.score === 90; //find함수는 콜백함수의 리턴이 true인 가장 처음 값을 반환
+} )
+
+```
+> filter
+```javascript
+const result = students.filter(function (student) {
+	return student.enrolled;  //enrolled는 학생 클래스의 세번째 변수
+} )
+```
+
+> map 
+```javascript
+const result = students.map(function (student) {
+	return student.score * 2;  // 새로운  배열요소
+} )
+```
+
+> some  
+```javascript
+const result = students.some(function (student) {
+	return student.score < 50;  //  이 조건에 맞는 요소가 있다면 result는 true 아니면 false
+} )
+```
 
 
+> every  
+```javascript
+const result = students.every(function (student) {
+	return student.score < 50;  // 모든 요소가 이 조건에 맞다면 result는 true 아니면 false
+} )
+```
 
+> reduce 
+```javascript
+a = [1,2,3,4,5]
+a.reduce((pre, cur) => pre + cur); // 15 
+a.reduce((pre, cur) => pre + cur, 100); // 115 
+```
 
+> reduceRight  
 
+> sort  
 
 ### package.json
 * 패키지 매니져.. 모듈을 설치하면 자동으로 생성.. node_modules 디렉토리가 없더라도(git push 할 때 node_module은 .gitignore에 기록됨.) package.json이 있다면 `yanr install`로 동일한 환경으로 개발 할 수 있음. 

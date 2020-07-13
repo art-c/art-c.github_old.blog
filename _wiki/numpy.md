@@ -47,7 +47,7 @@ np.sort(a, order=['age', 'height'])
 ` invalid literal for int() with base 10:`
 -  추측해보건데 이 문제는 넘파이가 수치형 데이터에 특화되어 있기에 ...아직 잘 모르겠다.
 - 이 문제를 해결하기 위해서 np.array 대신 np.asarry 형식을 사용하면 제대로 문자열 타입도 적용되었다.
-** 추가: np.asarry를 사용할 때 이미 dtype이 정해진 array에 적용하려면 위에 열거한 것과 동일한 문제가 다시 발생하므로, 만약 여러 structured array를 합치는 작업을 한다면 합치기 전에 개별 array들의 dtype을 맞게 적용해줘야 한다. 이렇게 하면 합칠 때 굳이 dtype을 적용하지 않아도 된다.
+  * 추가: np.asarry를 사용할 때 이미 dtype이 정해진 array에 적용하려면 위에 열거한 것과 동일한 문제가 다시 발생하므로, 만약 여러 structured array를 합치는 작업을 한다면 합치기 전에 개별 array들의 dtype을 맞게 적용해줘야 한다. 이렇게 하면 합칠 때 굳이 dtype을 적용하지 않아도 된다.
 
 
 ### numpy 배열에서 values_counts와 비슷하게 사용하는 방법

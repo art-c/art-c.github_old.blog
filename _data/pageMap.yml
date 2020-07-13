@@ -20,8 +20,8 @@ c++:
     summary: c++
     parent: index
     url: /wiki/c++
-    updated: '2020-07-11 16:55:34 +0900'
-    children: [oop, template]
+    updated: '2020-07-12 12:49:42 +0900'
+    children: ['Object Alignment', oop, template]
 celery:
     type: wiki
     title: ""
@@ -132,7 +132,7 @@ index:
     summary: Index
     parent: ""
     url: /wiki/index
-    updated: '2020-07-11 16:02:06 +0900'
+    updated: '2020-07-13 03:44:51 +0900'
     children: []
 javascript:
     type: wiki
@@ -140,7 +140,7 @@ javascript:
     summary: ""
     parent: index
     url: /wiki/javascript
-    updated: '2020-07-11 15:48:36 +0900'
+    updated: '2020-07-13 13:49:19 +0900'
     children: []
 material-ui:
     type: wiki
@@ -168,11 +168,11 @@ numpy:
     children: []
 'Object Alignment':
     type: wiki
-    title: ""
-    summary: ""
-    parent: ""
+    title: 'object alignment'
+    summary: 'object alignment'
+    parent: c++
     url: '/wiki/Object Alignment'
-    updated: '2020-07-11 16:55:34 +0900'
+    updated: '2020-07-12 12:03:20 +0900'
     children: []
 oop:
     type: wiki

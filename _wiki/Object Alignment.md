@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : 
-summary : 
+title   : object alignment
+summary : object alignment
 date    : 2020-07-11 16:35:56 +0900
-updated : 2020-07-11 16:55:34 +0900
-tag     : 
+updated : 2020-07-12 12:03:20 +0900
+tag     : object alignment
 toc     : true
 public  : true
-parent  : 
+parent  : c++
 latex   : false
 ---
 * TOC
