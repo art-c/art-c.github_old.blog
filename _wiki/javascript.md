@@ -195,14 +195,11 @@ const user3 = {};
 for (key in user) {
 	user3[key] = user[key];
 }
-
 // new way
 const user4 = {};
 Object.assign(user4, user); 
 console.log(user4);
 user4 = Object.assign({}, user);// 또는 리턴값을 받아서 사용해도 된다.
-
-
 //another example
 const fruit1 = {color: 'red'};
 const fruit2 = {color: 'blue', size: 'big'};
@@ -257,6 +254,7 @@ console.log(b)// [1, 3,4,5,6, 4]
 > slice(start?: number, end?: number): T[];   // 새로운 배열 반환  
 
 > find  
+
 ```javascript
 const students = [
 	new Student('A', 29, true, 45),
@@ -269,9 +267,10 @@ const students = [
 const result = students.find(function (student, index) { // 콜백함수는 students의 모든 요소에 대해 각각 호출된다.
 	return student.score === 90; //find함수는 콜백함수의 리턴이 true인 가장 처음 값을 반환
 } )
-
 ```
+
 > filter  
+
 ```javascript
 const result = students.filter(function (student) {
 	return student.enrolled;  //enrolled는 학생 클래스의 세번째 변수
@@ -279,6 +278,7 @@ const result = students.filter(function (student) {
 ```
 
 > map   
+
 ```javascript
 const result = students.map(function (student) {
 	return student.score * 2;  // 새로운  배열요소
