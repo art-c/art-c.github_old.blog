@@ -3,7 +3,7 @@ layout  : wiki
 title   : 
 summary : 
 date    : 2020-02-11 14:25:43 +0900
-updated : 2020-07-15 09:48:15 +0900
+updated : 2020-07-15 09:58:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -154,11 +154,8 @@ function makePerson(name, age) {
 		age,
 	}
 }
-value = makePerson("ju', 99)
-//위 함수의 리턴값: {name: 'ju', age: 99}
-
+value = makePerson("ju', 99) //함수의 리턴값: {name: 'ju', age: 99}
 // 아래 함수와 같이 쓸 수도 있음
-
 // Constructor Function
 function Person(name, age) {
 	this.name = name;
@@ -195,8 +192,8 @@ for(value of array) {  // python에서는 in으로 다되는데..
 ```
 
 * cloning  
-> `Object.assign`
-> concat과 python의 update를 합친 느낌
+> `Object.assign`  
+> concat과 python의 update를 합친 느낌  
 ```javascript  
 // oldway
 const user3 = {};
@@ -218,7 +215,7 @@ console.log(mixed.size); //'big
 
 ### Array  
 * `shift`와 `unshift`
-```Javascript
+```javascript
 a = [1,2,3,4];
 a.shift() // <- 로 이동 결과: [2,3,4]
 a.unshift(99) // 앞에 추가 결과: [99,2,3,4]
@@ -229,14 +226,9 @@ a.unshift(99) // 앞에 추가 결과: [99,2,3,4]
 * splice  
 ```javascript
 a = [1,2,3,4]
-
 a.splice(1,2) // index 1부터 2개를 지운다.
-
-
 b = [1,2,3,4]
-
 b.splice(1,2,3,4,5,6) // 2를 지우고 그 자리에 3, 4,5,6을 넣는다.
-
 // 반환값은 지워진 값 [2,3] 배열이다.
 console.log(b)// [1, 3,4,5,6, 4]
 ```
@@ -268,7 +260,6 @@ const students = [
 	new Student('D', 40, false, 66),
 	new Student('E', 18, true, 88),
 ];
-
 const result = students.find(function (student, index) { // 콜백함수는 students의 모든 요소에 대해 각각 호출된다.
 	return student.score === 90; //find함수는 콜백함수의 리턴이 true인 가장 처음 값을 반환
 } )
@@ -324,17 +315,17 @@ a.reduce((pre, cur) => pre + cur, 100); // 115
 ### 자바스크립트와 json
 
 * json의 기본적인 모습
- > '{"key": "value"}' 
- > 문자열 형태를 띄나 내부 키와 값은 이중따옴표로 표시, 외부는 홑따옴표로 감싼 형태다. 위 형태는 일반적인 콘솔 출력형태고 파일저장시 다음과 같이 저장됨.
- >  {"key": "value"}
- > 위와 같이 저장된 파일을 자바스크립트에서 불러오려면 다음과 같이 하면됨.
- > JSON.parse(JSON.stringify(jsonData);
- > 가끔 json 저장형식이 다음과 같은 경우가 있다.
- > ... \"namer\": \"\\uc544\\ud2b8\\ub85d\\uc2a4", \" ... 
- > 대충 json 파일인데 \ 역슬레쉬가 많이 들어가 있다 싶으면 우선 파일용량이 뻥튀기 되어 있을 것이다. json형식으로 같이 json에 맞게 문자열화되어 있는 형식이라 따로 stringify 함수를 호출할 필요가 없다. 그냥 다음과 같이 호출
- > JSON.parse(jsonData)
- > 용량이 큰 대신 문자열화 하는 오버헤드가 없다. 대신 웹상에서 전달될 때는 용량이 더 큰 점을 감안해야함. 
- > 결국 상황에 맞게 두 가지 방식을 사용..
+ > '{"key": "value"}'  
+ > 문자열 형태를 띄나 내부 키와 값은 이중따옴표로 표시, 외부는 홑따옴표로 감싼 형태다. 위 형태는 일반적인 콘솔 출력형태고 파일저장시 다음과 같이 저장됨.  
+ >  {"key": "value"}  
+ > 위와 같이 저장된 파일을 자바스크립트에서 불러오려면 다음과 같이 하면됨.  
+ > `JSON.parse(JSON.stringify(jsonData);`  
+ > 가끔 json 저장형식이 다음과 같은 경우가 있다.  
+ > `... \"namer\": \"\\uc544\\ud2b8\\ub85d\\uc2a4", \" ... `  
+ > 대충 json 파일인데 \ 역슬레쉬가 많이 들어가 있다 싶으면 우선 파일용량이 뻥튀기 되어 있을 것이다. json형식으로 같이 json에 맞게 문자열화되어 있는 형식이라 따로 stringify 함수를 호출할 필요가 없다. 그냥 다음과 같이 호출.  
+ > `JSON.parse(jsonData)`  
+ > 용량이 큰 대신 문자열화 하는 오버헤드가 없다. 대신 웹상에서 전달될 때는 용량이 더 큰 점을 감안해야함.  
+ > 결국 상황에 맞게 두 가지 방식을 사용.  
 
 
 
